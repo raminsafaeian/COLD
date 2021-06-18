@@ -14,8 +14,8 @@ For citing this paper, please use the following:
 }
 
 
-Requirements
-Python 3.7+
+## Requirements
++ Python 3.7+
 + networkx
 + itertools
 + random
