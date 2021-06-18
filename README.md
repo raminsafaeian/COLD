@@ -33,7 +33,7 @@ For citing this paper, please use the following:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; This Code finds the node which has will orient maximum number of undirected edges, in the worst case after performing single node intervention.  
 + COLD (MinMax) versus COLD (LB)  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; This Code Compares the running time of COLD (MinMax) and COLD (LB) for finding the best node for intervention in MinMax problem. Additionally, the number of interventions that are needed for full identification for both cases are computed.  
-+ COLD (MinMax) versus COLD (MinMaxPT)
++ COLD (MinMax) versus COLD (MinMaxPT)  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; This Code shows how much we gain from using the practical trick in solving MinMax problem.  
 
 
