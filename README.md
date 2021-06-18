@@ -37,3 +37,4 @@ For citing this paper, please use the following:
 
 
 ## Running a simple demo
+In each of these folders, there are some files with names similar to ``Main.py'', ``MainFixedEdgeDensity.py'' and ``MainFixedNode.py''. Running each of these files, executes the codes and returns reported results in the paper. 
