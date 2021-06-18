@@ -1,5 +1,6 @@
 # Causal Orientation Learning with dynamic programming
 
+## Main Reference
 This is an implementation of the following paper:  
 **Safaeian, R., Salehkaleybar, S. and Tabandeh, M. (2021). Fast Causal Orientation in Directed Acyclic Graphs (JMLR 2021).**
 
