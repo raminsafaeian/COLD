@@ -7,10 +7,10 @@ Safaeian, R., Salehkaleybar, S. and Tabandeh, M. (2021). Fast Causal Exploration
 ## Citing information
 For citing this paper, please use the following:
 
-@inproceedings{Safaeian2021COLD,
-    author = {Safaeian, Ramin and SalehKaleybar, Saber and Tabandeh, Mahmoud.},
-    title = {Fast Causal Exploration in Directed Acyclic Graphs},
-    year = {2021}
+@inproceedings{Safaeian2021COLD,  
+author = {Safaeian, Ramin and SalehKaleybar, Saber and Tabandeh, Mahmoud.},  
+title = {Fast Causal Exploration in Directed Acyclic Graphs},  
+year = {2021}  
 }
 
 
