@@ -15,8 +15,7 @@ For citing this paper, please use the following:
 
 
 Requirements
-Python 3.6+
-numpy
-scipy
-python-igraph: Install igraph C core and pkg-config first.
-torch: Optional, only used for nonlinear model.
+Python 3.7+
++ networkx
++ itertools
++ random
