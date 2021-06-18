@@ -23,8 +23,8 @@ For citing this paper, please use the following:
 
 
 ## Contents
-+ COLD (Essential)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Accessing v-structures, this Code recovers Essential graph.
++ COLD (Essential)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Accessing v-structures, this Code recovers Essential graph.
 + COLD (LB)
 + COLD (MECSize)
 + COLD (MinMax)
