@@ -1,18 +1,8 @@
 # Causal Orientation Learning with dynamic programming
 
 ## Main Reference
-This is an implementation of the following paper:  
-**Safaeian, R., Salehkaleybar, S. and Tabandeh, M. (2021). Fast Causal Orientation in Directed Acyclic Graphs (JMLR 2021).**
-
-## Citing information
-For citing this paper, please use the following:
-
-@inproceedings{Safaeian2021COLD,  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; author = {Safaeian, Ramin and SalehKaleybar, Saber and Tabandeh, Mahmoud.},  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; title = {Fast Causal Exploration in Directed Acyclic Graphs},  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; year = {2021}  
-}
-
+This is an implementation of the following paper:
+**Safaeian, R., Salehkaleybar, S. and Tabandeh, M. (2021). Fast Causal Orientation in Directed Acyclic Graphs (submitted to JMLR).**
 
 ## Requirements
 + Python 3.7+
@@ -31,9 +21,13 @@ For citing this paper, please use the following:
 + COLD (MinMax) versus COLD (MinMaxPT)  
 
 
-## Deescription
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The code in COLD (Essential) folder recovers Essential graph from oriented v-structures. In COLD (LB) folder, the lower bound on a single node in a chordal chain component is computed. In this code we compute the minimum number of edges that will be surely oriented if we intervene on that node. We compute the number of DAGs in an Markov Equivalence class (MEC) with the codes in COLD (MECSize) folder. Codes in folder COLD (MinMax) select a node from a chordal chain component to perform intervention. The property of selected node is that the number of oriented edges after performing intervention is maximum value that is achievable. We use the COLD (LB) Algorithm to solve the MinMax Problem. Codes in COLD (MinMax) versus COLD (LB) folder compares two algorithms COLD (MinMax) and COLD (LB) in the sence of execution time and performance. This comparison shows that using  COLD (LB) decreases the execution time of solving MinMax Problem while maintaining the number of interventions that are needed for full identifacation. Furthermore, COLD (MinMaxPT) algorithm uses a practial trick which accelerates finding the solutions of MinMax problems. 
-
+## Description
++The code in COLD (Essential) folder recovers the essential graph from oriented v-structures.  
++In COLD (LB) folder, the lower bound on a single node in a chordal chain component is computed. In this code, we compute the minimum number of edges that will be definitely oriented if we intervene on that node.  
++We compute the number of DAGs in a Markov Equivalence class (MEC) with the codes in COLD (MECSize) folder. Codes in folder COLD (MinMax) select a node from a chordal chain component to perform an intervention. The property of the selected node is that the number of oriented edges after performing intervention is the maximum value that is achievable.  
++We use the COLD (LB) Algorithm to solve the MinMax Problem. Codes in COLD (MinMax) versus COLD (LB) folder compare two algorithms COLD (MinMax) and COLD (LB) in the sense of execution time and performance. This comparison shows that using COLD (LB) decreases the execution time of solving MinMax Problem while maintaining the number of interventions that are needed for full identification.  
++Furthermore, COLD (MinMaxPT) algorithm uses a practical trick that accelerates finding the solutions for MinMax problems. 
+ 
 
 
 ## Running a simple demo
