@@ -22,6 +22,15 @@ This is an implementation of the following paper:
 
 
 ## Description
++ COLD (Essential): Run MainFixedEdgeDensity.py or MainFixedNode.py  
++ COLD (LB):  Run MainFixedEdgeDensity.py or MainFixedNode.py  
++ COLD (MECSize): Run Main.py  
++ COLD (MinMax):  Run MainFixedEdgeDensity.py or MainFixedNode.py  
++ COLD (MinMax) versus COLD (LB):  Run MainFixedEdgeDensity.py or MainFixedNode.py  
++ COLD (MinMaxPT):  Run MainFixedEdgeDensity.py or MainFixedNode.py 
+
+
+## Running a simple demo
 + The code in COLD (Essential) folder recovers the essential graph from oriented v-structures.  
 + In COLD (LB) folder, the lower bound on a single node in a chordal chain component is computed. In this code, we compute the minimum number of edges that will be definitely oriented if we intervene on that node.  
 + We compute the number of DAGs in a Markov Equivalence class (MEC) with the codes in COLD (MECSize) folder.  
@@ -29,7 +38,3 @@ This is an implementation of the following paper:
 + We use the COLD (LB) Algorithm to solve the MinMax Problem. Codes in COLD (MinMax) versus COLD (LB) folder compare two algorithms COLD (MinMax) and COLD (LB) in the sense of execution time and performance. This comparison shows that using COLD (LB) decreases the execution time of solving MinMax Problem while maintaining the number of interventions that are needed for full identification.  
 + Furthermore, COLD (MinMaxPT) algorithm uses a practical trick that accelerates finding the solutions for MinMax problems. 
  
-
-
-## Running a simple demo
-In each of these folders, there are some files with names similar to Main.py, MainFixedEdgeDensity.py and MainFixedNode.py. Running each of these files, executes the codes and returns reported results in the paper. 
