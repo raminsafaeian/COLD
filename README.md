@@ -37,4 +37,6 @@ This is an implementation of the following paper:
 + Codes in folder COLD (MinMax) select a node from a chordal chain component to perform an intervention. The property of the selected node is that the number of oriented edges after performing intervention is the maximum value that is achievable.  
 + We use the COLD (LB) Algorithm to solve the MinMax Problem. Codes in COLD (MinMax) versus COLD (LB) folder compare two algorithms COLD (MinMax) and COLD (LB) in the sense of execution time and performance. This comparison shows that using COLD (LB) decreases the execution time of solving MinMax Problem while maintaining the number of interventions that are needed for full identification.  
 + Furthermore, COLD (MinMaxPT) algorithm uses a practical trick that accelerates finding the solutions for MinMax problems. 
+
+
  
