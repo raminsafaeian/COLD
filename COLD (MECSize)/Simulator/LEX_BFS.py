@@ -1,4 +1,4 @@
-from GraphUtil import Neighbors
+from Simulator.GraphUtil import Neighbors
 
 
 def LEX_BFS(G,InitOrder):
