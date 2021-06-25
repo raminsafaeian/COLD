@@ -1,15 +1,11 @@
-"""
-@ Author : Ramin Safaeian
-  Date   : 06/11/2021
 
-"""
 
 import networkx as nx
 from Simulator.RandomDAG import RandomDAG
 from Simulator.GraphUtil import Essential
 from GraphTools import nEdges
-from HauserLUT.HauserLUT import BestNodeHauserLUT
-from LowerBound.LowerBoundOfOrientation import LowerBoundOfOrientationNewMethod
+from COLD_LB.COLD_LB import COLD_LB
+from COLD_MinMax.COLD_MinMax import COLD_MinMax
 
 
 from MeekLUT import Meek
@@ -20,14 +16,15 @@ import copy
     
 from enum import Enum
 class Algorithm(Enum):
-    AccHauser    = 0
-    LowBoundNew    = 1
+    COLD_MinMax    = 0
+    COLD_LB  = 1
+
 
 AlgorithmName = {}
-AlgorithmName[Algorithm.AccHauser] = 'AccHauser'
-AlgorithmName[Algorithm.LowBoundNew] = 'LowBoundNew'
+AlgorithmName[Algorithm.COLD_MinMax] = 'COLD_MinMax'
+AlgorithmName[Algorithm.COLD_LB]     = 'COLD_LB'
 
-Alg = [Algorithm.AccHauser,Algorithm.LowBoundNew]
+Alg = [Algorithm.COLD_MinMax,Algorithm.COLD_LB] 
 nNodes = range(20,61,10)
 nAvg   = 100
 nIntervention = list([])
@@ -68,7 +65,6 @@ for p in nNodes:
         Error = list([0])
         while(nAvgCnter<nAvg):
                        
-            
             ##############################################################################
             ###
             ### Genrate DAG
@@ -90,35 +86,31 @@ for p in nNodes:
                 neigh["dag"][v2]   |= set([v1])
                 neigh["graph"][v1] |= set([v2])
                 neigh["graph"][v2] |= set([v1])
-#            print(neigh["dag"])
 
             ##############################################################################
             ###
-            ### Accelerated Hauser
+            ### COLD (MinMax)
             ###
             ##############################################################################
-            if Algorithm.AccHauser in Alg:
+            if Algorithm.COLD_MinMax in Alg:
                 neightmp = copy.deepcopy(neigh)
                 start = time.perf_counter_ns()   
                 MeekObj = Meek(neightmp["graph"])
-                MinOrientation[Alg.index(Algorithm.AccHauser)][p][e],_ =BestNodeHauserLUT(neightmp["graph"],nEdges(neightmp["graph"]),MeekObj,'AllCliques')
+                MinOrientation[Alg.index(Algorithm.COLD_MinMax)][p][e],_ =COLD_MinMax(neightmp["graph"],nEdges(neightmp["graph"]),MeekObj,'AllCliques')
                 end  = time.perf_counter_ns()   
-                AvgTime[Alg.index(Algorithm.AccHauser)][p][e]+= (end-start) 
-
-
-
+                AvgTime[Alg.index(Algorithm.COLD_MinMax)][p][e]+= (end-start) 
 
             ##############################################################################
             ###
-            ### Lower Bound New Algorihtm
+            ###  COLD (LB)
             ###
             ##############################################################################
-            if Algorithm.LowBoundNew in Alg:
+            if Algorithm.COLD_LB in Alg:
                 neightmp = copy.deepcopy(neigh)
                 start = time.perf_counter_ns() 
-                MinOrientation[Alg.index(Algorithm.LowBoundNew)][p][e],_ = LowerBoundOfOrientationNewMethod(neightmp["graph"])                  
+                MinOrientation[Alg.index(Algorithm.COLD_LB)][p][e],_ = COLD_LB(neightmp["graph"])                  
                 end  = time.perf_counter_ns()   
-                AvgTime[Alg.index(Algorithm.LowBoundNew)][p][e]+= (end-start) 
+                AvgTime[Alg.index(Algorithm.COLD_LB)][p][e]+= (end-start) 
 
 
             nAvgCnter +=1
@@ -130,7 +122,7 @@ for p in nNodes:
             ### Printing
             ###
             ##############################################################################
-                                   
+                                       
             with open('ResultFixedEdgeDensity.csv', 'a+', newline='') as csvfile:
                 CSVwriter = csv.writer(csvfile, delimiter=',',
                                 quotechar='|', quoting=csv.QUOTE_MINIMAL)
